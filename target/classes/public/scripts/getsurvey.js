@@ -30,7 +30,7 @@ $(document).ready(function () {
         var UserMail = $('#mail').val();
         var jsonParam = {name: UserName, surname: UserSurname, mail: UserMail};
         console.log(jsonParam);
-        $.get("http://localhost:8080/survey?",jsonParam,function (data) {
+        $.get("http://localhost:8080/survey",jsonParam,function (data) {
 
             console.log(data);
 

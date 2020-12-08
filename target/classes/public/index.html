@@ -1,54 +1,25 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <title>Formulaire</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style/style.css"/>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-    <script src = "scripts/getsurvey.js"></script>
+    <script src="scripts/getuser.js"></script>
+    <meta charset="UTF-8">
+    <title>Login</title>
 </head>
 <body>
-<h3>Sondage sur les plateformes de streaming</h3>
+        <label>Username</label><input type="text"  id="name" name="name" required><br>
+        <label>Password</label><input type="password" id="password" required>
+        <br>
 
-    <!-- IDENTIFICATION-->
-    <fieldset>
-        <label>Nom</label><input type="text"  id="name" name="name" required><br>
-        <label>Prénom</label><input type="text" id="surname" name="surname" required><br>
-        <label>Email</label><input type="email" id="mail" name="mail" pattern=".+@.+" required><br>
-    </fieldset>
-    <br>
-    <!-- SONDAGE -->
-    <fieldset>
-        <label for age>Dans quelle tranche d'âge vous situez vous ?</label><br>
-        <input type="radio" name="age" value="moins18" id="moins18" /> <label for="moins18">Moins de 18 ans</label><br>
-        <input type="radio" name="age" value="medium18-30" id="medium18-30" /> <label for="medium18-30">18-30 ans</label><br>
-        <input type="radio" name="age" value="medium30-60" id="medium30-60" /> <label for="medium30-60">30-60 ans</label><br>
-        <input type="radio" name="age" value="plus60" id="plus60" /> <label for="plus60">Plus de 60</label><br>
-    </fieldset>
-    <br>
-
-    <fieldset>
-        <label for q1>Connaissez-vous ces plateformes de streaming ?</label><br>
-        <input type="checkbox" name="checkbox1" id="01" /> <label for Netflix>Netflix</label><br>
-        <input type="checkbox" name="checkbox2" id="02" /> <label for Prime Vidéo>Prime Vidéo</label><br>
-        <input type="checkbox" name="checkbox3" id="03" /> <label for MyCanal>MyCanal</label><br>
-        <input type="checkbox" name="checkbox4" id="04" /> <label for Disney +>Disney +</label><br>
-        <input type="checkbox" name="checkbox5" id="05" /> <label for OCS>OCS</label><br>
-        <input type="checkbox" name="checkbox6" id="06" /> <label for Aucune>J'en connais aucune</label><br>
-    </fieldset>
-    <br>
-
-    <fieldset>
-        <label for q2>A quelle(s) plateforme(s) de streaming êtes-vous abonné ?</label><br>
-        <input type="checkbox" name="checkbox7" id="Netflix2" /> <label for Netflix2>Netflix</label><br>
-        <input type="checkbox" name="checkbox8" id="Prime Vidéo2" /> <label for Prime Vidéo2>Prime Vidéo</label><br>
-        <input type="checkbox" name="checkbox9" id="MyCanal2" /> <label for MyCanal2>MyCanal</label><br>
-        <input type="checkbox" name="checkbox10" id="Disney +2" /> <label for Disney +2>Disney +</label><br>
-        <input type="checkbox" name="checkbox11" id="OCS2" /> <label for OCS2>OCS</label><br>
-        <input type="checkbox" name="checkbox12" id="Aucune2" /> <label for Aucune2>Aucune</label><br>
-    </fieldset>
-    <br>
-    <input id="push" type="submit" value="Submit">
-    <input type="reset" value="Reset" />
+        <nav>
+           <!-- <a href="form.html"> -->
+                <input id="login" type="submit" value="Login">
+         <!--   </a> -->
+            <a href="register.html">
+                <input type="button" value="Register">
+            </a>
+        </nav>
 
 </body>
 </html>

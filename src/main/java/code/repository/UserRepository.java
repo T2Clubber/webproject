@@ -1,7 +1,7 @@
-package exo.repository;
+package code.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import exo.entity.User;
+import code.entity.User;
 import org.springframework.stereotype.Repository;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
