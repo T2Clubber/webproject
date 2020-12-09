@@ -1,14 +1,18 @@
 $(document).ready(function () {
 
     $('#login').click(function() {
-        var UserName = $('#username').val();
-        var UserPassword = $('#password').val();
-        var jsonParam = {username: UserName, password: UserPassword};
 
-        $.post("http://localhost:8080/login",jsonParam,function (data) {
-
-            console.log(data);
-
+        $.ajax({
+            url:"http://localhost:8080/login",
+            type:"POST",
+            data:JSON.stringify({
+                username: $('#username').val(),
+                password: $('#password').val()
+            }),
+            contentType:"application/json",
+            dataType:"json",
+            complete:function(data){
+                console.log(data);}
         });
     });
 
@@ -24,8 +28,8 @@ $(document).ready(function () {
             }),
             contentType:"application/json",
             dataType:"json",
-        }).done(function(data){
-            console.log(data);
+            complete:function(data){
+                console.log(data);}
         });
     });
 });

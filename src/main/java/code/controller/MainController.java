@@ -34,7 +34,7 @@ public class MainController {
         n.setMail(json.get("mail"));
         n.setPassword(json.get("password"));
         userRepository.save(n);
-        return ResponseEntity.status(201).body("{ username :" +json.get("username") + ", password: " + json.get("password") + "}");
+        return ResponseEntity.status(201).body("{ username :" +json.get("username") +", mail: "+json.get("mail")+", password: " + json.get("password") + "}");
     }
 
     @GetMapping(path="/all")
