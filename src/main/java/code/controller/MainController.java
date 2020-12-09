@@ -2,18 +2,16 @@ package code.controller;
 
 import code.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import code.repository.UserRepository;
 
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Controller // This means that this class is a Controller
-@RequestMapping(path="/demo") // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/") // This means URL's start with /demo (after Application path)
 public class MainController {
 
     private final AtomicLong counter = new AtomicLong();
@@ -22,18 +20,21 @@ public class MainController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody String addNewUser (@RequestParam String username
-            , @RequestParam String mail, @RequestParam String password) {
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ResponseEntity<Object> login(@RequestBody Map<String, String> json) {
+        return ResponseEntity.ok().body("{ username :" +json.get("username") + ", password: " + json.get("password") + "}");
+    }
+
+    @PostMapping(path="/register") // Map ONLY POST Requests
+    public ResponseEntity<?> addNewUser (@RequestBody Map<String,String> json) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
-
         User n = new User();
-        n.setUsername(username);
-        n.setMail(mail);
-        n.setPassword(password);
+        n.setUsername(json.get("username"));
+        n.setMail(json.get("mail"));
+        n.setPassword(json.get("password"));
         userRepository.save(n);
-        return "Saved";
+        return ResponseEntity.status(201).body("{ username :" +json.get("username") + ", password: " + json.get("password") + "}");
     }
 
     @GetMapping(path="/all")

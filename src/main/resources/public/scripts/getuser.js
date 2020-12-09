@@ -5,7 +5,7 @@ $(document).ready(function () {
         var UserPassword = $('#password').val();
         var jsonParam = {username: UserName, password: UserPassword};
 
-        $.get("http://localhost:8080/login",jsonParam,function (data) {
+        $.post("http://localhost:8080/login",jsonParam,function (data) {
 
             console.log(data);
 
@@ -13,15 +13,19 @@ $(document).ready(function () {
     });
 
     $('#register').click(function() {
-        var UserName = $('#username').val();
-        var UserMail = $('#mail').val();
-        var UserPassword = $('#password').val();
-        var jsonParam = {username: UserName, mail: UserMail, password: UserPassword};
 
-        $.get("http://localhost:8080/register",jsonParam,function (data) {
-
+        $.ajax({
+            url:"http://localhost:8080/register",
+            type:"POST",
+            data:JSON.stringify({
+                username: $('#username').val(),
+                mail: $('#mail').val(),
+                password: $('#password').val()
+            }),
+            contentType:"application/json",
+            dataType:"json",
+        }).done(function(data){
             console.log(data);
-
         });
     });
 });
