@@ -14,19 +14,21 @@
     <!-- SONDAGE -->
     <fieldset>
         <label>Quel âge avez-vous ?</label><br>
-        <input type="number" id="age" required/><br>
+        <input type="number" id="age" name="age" min="0" required/><br>
     </fieldset>
 
     <fieldset>
         <label>Quel est votre genre ?</label><br>
-        <input type="radio" id="girl"/><label>Femme</label><br>
-        <input type="radio" id="boy"/><label>Homme</label><br>
+        <div>
+        <input type="radio" id="girl" name="genre" value="Femme"/><label>Femme</label><br>
+        <input type="radio" id="boy" name="genre" value="Homme"/><label>Homme</label><br>
+        </div>
     </fieldset>
 
     <fieldset>
         <label>Avez-vous déjà pensé à faire/fait de la chirurgie esthétique ?</label><br>
-        <input type="radio" id="yes"/><label>Oui</label><br>
-        <input type="radio" id="no"/><label>Non</label><br>
+        <input type="radio" id="yes" name="surg" value="Oui"/><label>Oui</label><br>
+        <input type="radio" id="no" name="surg" value="Non"/><label>Non</label><br>
     </fieldset>
 
     <br>

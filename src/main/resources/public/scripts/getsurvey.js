@@ -6,7 +6,9 @@ $(document).ready(function () {
             url:"http://localhost:8080/survey",
             type:"POST",
             data:JSON.stringify({
-                age: $('#age').val()
+                age: $('#age').val(),
+                genre: $('input[name="genre"]:checked').val(),
+                surg: $('input[name="surg"]:checked').val()
             }),
             contentType:"application/json",
             dataType:"json",
