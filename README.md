@@ -10,4 +10,4 @@
 
 – Créer un utilisateur 'springuser'@'%' with password 'ThePassword' (create user 'springuser'@'%' identified by 'ThePassword';)
 
-– Donner les privilèges au nouvel utilisateur (grant all on db_example.* to 'springuser'@'%';)
+– Donner les privilèges au nouvel utilisateur (grant all on formdatabase.* to 'springuser'@'%';)
