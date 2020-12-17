@@ -1,6 +1,6 @@
 # webproject
 
-[Lien vers le premier repository](https://github.com/T2Clubber/Webform)
+[Lien vers le premier repository](https://github.com/T2Clubber/Webform) : C'est notre projet "brouillon", projet initial, et le répo que nous vous avons rendu est celui finalisé pour le présenter d'une façon plus propre.
 
 • Préalable MySQL :
 
