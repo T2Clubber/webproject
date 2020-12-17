@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import code.repository.UserRepository;
 
-import java.util.EmptyStackException;
 import java.util.Map;
 import java.util.Optional;
 
@@ -27,6 +26,10 @@ public class UserController {
         String username = json.get("username");
         String password = json.get("password");
         User u = userRepository.findByUsername(username);
+
+      if (username.equals("") || password.equals("")) {
+            return ResponseEntity.status(500).body("{}");
+      }
 
         if (u==null) {
             // UTILISATEUR INCONNU
@@ -50,6 +53,10 @@ public class UserController {
         String mail = json.get("mail");
         User u = userRepository.findByUsername(username);
         User y = userRepository.findByMail(mail);
+
+       if (username.equals("") || mail.equals("") || password.equals("")) {
+           return ResponseEntity.status(500).body("{}");
+       }
 
         if (u!=null && username.equals(u.getUsername())) {
                 //USERNAME DEJA UTILISE

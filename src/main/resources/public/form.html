@@ -8,33 +8,40 @@
     <script src = "scripts/getsurvey.js"></script>
 </head>
 <body>
+<div id="container1">
+        <h3>Sondage 1</h3>
 
-            <h3>Sondage 1</h3>
+        <br>
+        <!-- SONDAGE -->
+        <fieldset>
+            <br>
+            <label>Quel âge avez-vous ?</label><br>
+            <input type="number" id="age" name="age" min="0" required/><br>
+            <br>
+        </fieldset>
 
+        <fieldset>
+            <br>
+            <label>Quel est votre genre ?</label><br>
+            <div>
+                <input type="radio" id="girl" name="genre" value="Femme"/><label>Femme</label><br>
+                <input type="radio" id="boy" name="genre" value="Homme"/><label>Homme</label><br>
                 <br>
-                <!-- SONDAGE -->
-                <fieldset>
-                    <label>Quel âge avez-vous ?</label><br>
-                    <input type="number" id="age" name="age" min="0" required/><br>
-                </fieldset>
+            </div>
+        </fieldset>
 
-                <fieldset>
-                    <label>Quel est votre genre ?</label><br>
-                    <div>
-                    <input type="radio" id="girl" name="genre" value="Femme"/><label>Femme</label><br>
-                    <input type="radio" id="boy" name="genre" value="Homme"/><label>Homme</label><br>
-                    </div>
-                </fieldset>
+        <fieldset>
+            <br>
+            <label>Avez-vous déjà pensé à faire/fait de la chirurgie esthétique ?</label><br>
+            <input type="radio" id="yes" name="surg" value="Oui"/><label>Oui</label><br>
+            <input type="radio" id="no" name="surg" value="Non"/><label>Non</label><br>
+            <br>
+        </fieldset>
 
-                <fieldset>
-                    <label>Avez-vous déjà pensé à faire/fait de la chirurgie esthétique ?</label><br>
-                    <input type="radio" id="yes" name="surg" value="Oui"/><label>Oui</label><br>
-                    <input type="radio" id="no" name="surg" value="Non"/><label>Non</label><br>
-                </fieldset>
-
-                <br>
-                <input id="answer" type="submit" value="Submit">
-                <input type="reset" value="Reset" />
+        <br>
+        <input id="answer" type="submit" value="Submit">
+        <input type="reset" value="Reset" />
+</div>
 
 </body>
 </html>
