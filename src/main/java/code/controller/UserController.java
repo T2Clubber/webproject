@@ -1,5 +1,6 @@
 package code.controller;
 
+
 import code.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import code.repository.UserRepository;
 
+import java.util.EmptyStackException;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Optional;
+
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/") // This means URL's start with /demo (after Application path)
@@ -20,7 +23,25 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<Object> login(@RequestBody Map<String, String> json) {
-        return ResponseEntity.ok().body("{ username :" +json.get("username") + ", password: " + json.get("password") + "}");
+
+        String username = json.get("username");
+        String password = json.get("password");
+        User u = userRepository.findByUsername(username);
+
+        if (u==null) {
+            // UTILISATEUR INCONNU
+           return ResponseEntity.status(200).body("{ username: " +username + ", password: " + password+ "}");
+        } else {
+            if (password.equals(u.getPassword())) {
+                // CONNEXION
+                return ResponseEntity.status(201).body("{ username: " +username + ", password: " + password+ "}");
+            } else {
+                // ERREUR DE MOT DE PASSE
+                return ResponseEntity.status(202).body("{ username: " +username + ", password: " + password+ "}");
+            }
+
+
+        }
     }
 
     @PostMapping(path="/register") // Map ONLY POST Requests
