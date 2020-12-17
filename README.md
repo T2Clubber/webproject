@@ -1,13 +1,15 @@
 # webproject
 
-[Lien vers le premier repository](https://github.com/T2Clubber/Webform) : C'est notre projet "brouillon", projet initial, et le répo que nous vous avons rendu est celui finalisé pour le présenter d'une façon plus propre.
+[Lien vers le premier repository](https://github.com/T2Clubber/Webform) : C'est notre repository "brouillon/apprentissage". Ce nouveau repository est la version finale.
 
 • Préalable MySQL :
 
 — Installer MySQL
 
-– Créer la base de données 'formdatabase' (create database formdatabase;)
+– Dans l'inferface mysql (mysql --password) :
 
-– Créer un utilisateur 'springuser'@'%' with password 'ThePassword' (create user 'springuser'@'%' identified by 'ThePassword';)
+    – Créer la base de données 'formdatabase' (create database formdatabase;)
 
-– Donner les privilèges au nouvel utilisateur (grant all on formdatabase.* to 'springuser'@'%';)
+    – Créer un utilisateur 'springuser'@'%' with password 'ThePassword' (create user 'springuser'@'%' identified by 'ThePassword';)
+
+    – Donner les privilèges au nouvel utilisateur (grant all on formdatabase.* to 'springuser'@'%';)
