@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style/style.css"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script src="scripts/getuser.js"></script>
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
-<body>
-        <label>Username</label><input type="text"  id="username" name="name" required><br>
-        <label>Password</label><input type="password" id="password" required>
-        <br>
+    <body>
+        <div id="container">
+            <form>
+                <h1>Connexion</h1>
 
-        <nav>
-            <input id="login" type="submit" value="Login">
+                <label><b>Username</b></label><input type="text" placeholder="Enter your login" id="username" name="name" required><br>
 
-            <a href="register.html">
-                <input type="button" value="Register">
-            </a>
-        </nav>
+                <label><b>Password</b></label><input type="password" placeholder="Enter your password" id="password" required>
+                <br>
 
-</body>
+                <nav>
+                        <input id="login" type="submit" value="Login" onclick="">
+
+                    <a href="register.html">
+                        <input type="button" value="Register">
+                    </a>
+                </nav>
+            </form>
+        </div>
+    </body>
 </html>

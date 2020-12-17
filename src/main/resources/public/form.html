@@ -3,37 +3,38 @@
 <head>
     <title>Formulaire</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="style/style.css"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script src = "scripts/getsurvey.js"></script>
 </head>
 <body>
-<h3>Sondage 1</h3>
 
-    <br>
-    <!-- SONDAGE -->
-    <fieldset>
-        <label>Quel âge avez-vous ?</label><br>
-        <input type="number" id="age" name="age" min="0" required/><br>
-    </fieldset>
+            <h3>Sondage 1</h3>
 
-    <fieldset>
-        <label>Quel est votre genre ?</label><br>
-        <div>
-        <input type="radio" id="girl" name="genre" value="Femme"/><label>Femme</label><br>
-        <input type="radio" id="boy" name="genre" value="Homme"/><label>Homme</label><br>
-        </div>
-    </fieldset>
+                <br>
+                <!-- SONDAGE -->
+                <fieldset>
+                    <label>Quel âge avez-vous ?</label><br>
+                    <input type="number" id="age" name="age" min="0" required/><br>
+                </fieldset>
 
-    <fieldset>
-        <label>Avez-vous déjà pensé à faire/fait de la chirurgie esthétique ?</label><br>
-        <input type="radio" id="yes" name="surg" value="Oui"/><label>Oui</label><br>
-        <input type="radio" id="no" name="surg" value="Non"/><label>Non</label><br>
-    </fieldset>
+                <fieldset>
+                    <label>Quel est votre genre ?</label><br>
+                    <div>
+                    <input type="radio" id="girl" name="genre" value="Femme"/><label>Femme</label><br>
+                    <input type="radio" id="boy" name="genre" value="Homme"/><label>Homme</label><br>
+                    </div>
+                </fieldset>
 
-    <br>
-    <input id="answer" type="submit" value="Submit">
-    <input type="reset" value="Reset" />
+                <fieldset>
+                    <label>Avez-vous déjà pensé à faire/fait de la chirurgie esthétique ?</label><br>
+                    <input type="radio" id="yes" name="surg" value="Oui"/><label>Oui</label><br>
+                    <input type="radio" id="no" name="surg" value="Non"/><label>Non</label><br>
+                </fieldset>
+
+                <br>
+                <input id="answer" type="submit" value="Submit">
+                <input type="reset" value="Reset" />
 
 </body>
 </html>
