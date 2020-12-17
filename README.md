@@ -19,5 +19,8 @@ Ce nouveau repository est la version finale.
 ### Fonctionnalités :
 
     • Création/connexion utilisateur sécurisée (Username unique/Mail unique/Pas de champs NULL).
+    
     • Insertion dans une BDD MySQL les nouveaux utilisateurs et les réponses aux formulaires.
+    
     • Réponse console des données entrées par l'utilisateur.
+   
