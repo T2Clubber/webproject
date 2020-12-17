@@ -1,6 +1,8 @@
 # webproject
 
-[Lien vers le premier repository](https://github.com/T2Clubber/Webform) : C'est notre repository "brouillon/apprentissage". Ce nouveau repository est la version finale.
+[Lien vers le premier repository](https://github.com/T2Clubber/Webform) : C'est notre repository "brouillon/apprentissage". 
+
+Ce nouveau repository est la version finale.
 
 ### Préalable MySQL :
 
@@ -16,4 +18,6 @@
 
 ### Fonctionnalités :
 
-    • Création/connexion utilisateur
+    • Création/connexion utilisateur sécurisée (Username unique/Mail unique/Pas de champs NULL).
+    • Insertion dans une BDD MySQL les nouveaux utilisateurs et les réponses aux formulaires.
+    
