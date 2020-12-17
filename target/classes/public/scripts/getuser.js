@@ -7,12 +7,20 @@ $(document).ready(function () {
             type:"POST",
             data:JSON.stringify({
                 username: $('#username').val(),
-                password: $('#password').val()
+                password: $('#password').val(),
             }),
             contentType:"application/json",
             dataType:"json",
             complete:function(data){
-                console.log(data);}
+                console.log(data);
+                if (data["status"] == 200) {
+                    alert("Username inconnu");
+                } else if (data["status"] == 202) {
+                    alert("Mot de passe erroné");
+                } else {
+                    document.location.href="form.html";
+                }
+            }
         });
     });
 
@@ -29,7 +37,17 @@ $(document).ready(function () {
             contentType:"application/json",
             dataType:"json",
             complete:function(data){
-                console.log(data);}
+                console.log(data);
+                if (data["status"] == 200) {
+                    alert("Username déjà utilisé");
+                } else if (data["status"] == 202) {
+                    alert("Adresse mail déjà utilisée");
+                } else {
+                    alert("Compte enregistré");
+                    document.location.href="index.html";
+                }
+
+            }
         });
     });
 });

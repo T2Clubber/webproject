@@ -37,7 +37,17 @@ $(document).ready(function () {
             contentType:"application/json",
             dataType:"json",
             complete:function(data){
-                console.log(data);}
+                console.log(data);
+                if (data["status"] == 200) {
+                    alert("Username déjà utilisé");
+                } else if (data["status"] == 202) {
+                    alert("Adresse mail déjà utilisée");
+                } else {
+                    alert("Compte enregistré");
+                    document.location.href="index.html";
+                }
+
+            }
         });
     });
 });

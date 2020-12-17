@@ -39,21 +39,37 @@ public class UserController {
                 // ERREUR DE MOT DE PASSE
                 return ResponseEntity.status(202).body("{ username: " +username + ", password: " + password+ "}");
             }
-
-
         }
     }
 
-    @PostMapping(path="/register") // Map ONLY POST Requests
+    @PostMapping(path="/register")
     public ResponseEntity<?> addNewUser (@RequestBody Map<String,String> json) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
-        User n = new User();
-        n.setUsername(json.get("username"));
-        n.setMail(json.get("mail"));
-        n.setPassword(json.get("password"));
-        userRepository.save(n);
-        return ResponseEntity.status(201).body("{ username :" +json.get("username") +", mail: "+json.get("mail")+", password: " + json.get("password") + "}");
+
+        String username = json.get("username");
+        String password = json.get("password");
+        String mail = json.get("mail");
+        User u = userRepository.findByUsername(username);
+        User y = userRepository.findByMail(mail);
+
+        if (u!=null && username.equals(u.getUsername())) {
+                //USERNAME DEJA UTILISE
+                return ResponseEntity.status(200).body("{ username :" +username +", mail: "+mail+", password: " +password + "}");
+        }
+
+        if (y!=null && mail.equals(y.getMail())) {
+                // MAIL DEJA UTILISE
+                return ResponseEntity.status(202).body("{ username :" +username +", mail: "+mail+", password: " +password + "}");
+        } else {
+            // ENREGISTREMENT D'UN NOUVEL UTILISATEUR
+
+            User n = new User();
+            n.setUsername(username);
+            n.setMail(mail);
+            n.setPassword(password);
+            userRepository.save(n);
+
+            return ResponseEntity.status(201).body("{ username :" +username +", mail: "+mail+", password: " +password + "}");
+        }
     }
 
     @GetMapping(path="/all")
